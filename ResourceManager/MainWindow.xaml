@@ -12,7 +12,7 @@
         AllowsTransparency="True">
 
 
-    <Border Background="#273537"
+    <Border Background="#272537"
             CornerRadius="20" Height="720">
 
         <Grid Width="1280" Height="720">
@@ -55,7 +55,12 @@
                      VerticalContentAlignment="Center"
                      HorizontalAlignment="Left"
                      Margin="5"
-                     Grid.Column="1"/>
+                     Grid.Column="1"
+                     Style="{StaticResource ModernTextBox}"/>
+
+            <ContentControl Grid.Row="1"
+                            Grid.Column="1"
+                            Margin="10"/>
 
         </Grid>
         

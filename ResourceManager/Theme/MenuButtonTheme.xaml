@@ -3,7 +3,7 @@
     <Style BasedOn="{StaticResource {x:Type ToggleButton}}"
            TargetType="{x:Type RadioButton}"
            x:Key="MenuButtonTheme">
-        
+
         <Style.Setters>
             <Setter Property="Template">
                 <Setter.Value>
@@ -24,7 +24,7 @@
             <Setter Property="Background" Value="Transparent"/>
             <Setter Property="BorderThickness" Value="0"/>
         </Style.Setters>
-        
+
 
         <Style.Triggers>
             <Trigger Property="IsChecked" Value="True">
