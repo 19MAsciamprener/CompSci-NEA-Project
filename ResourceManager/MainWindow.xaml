@@ -4,9 +4,65 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ResourceManager"
-        mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        mc:Ignorable="d" 
+        Height="720" Width="1280"
+        WindowStyle="None"
+        MinWidth="1280" MinHeight="720"
+        Background="Transparent"
+        AllowsTransparency="True">
 
-    </Grid>
+
+    <Border Background="#273537"
+            CornerRadius="20" Height="720">
+
+        <Grid Width="1280" Height="720">
+            
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="200"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="75"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+
+            <TextBlock Text="Resource Manager"
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Center"
+                   Foreground="White"
+                   FontSize="22"/>
+
+            <StackPanel Grid.Row="1">
+                <RadioButton Content="Home"
+                             Height="50"
+                             Foreground="White"
+                             FontSize="14"
+                             Style="{StaticResource MenuButtonTheme}"
+                             />
+                <RadioButton Content="Discovery"
+             Height="50"
+             Foreground="White"
+             FontSize="14"
+             Style="{StaticResource MenuButtonTheme}"
+             />
+            </StackPanel>
+
+
+            <TextBox Width="250"
+                     Height="40"
+                     VerticalContentAlignment="Center"
+                     HorizontalAlignment="Left"
+                     Margin="5"
+                     Grid.Column="1"/>
+
+        </Grid>
+        
+
+
+
+
+
+    </Border>
 </Window>
