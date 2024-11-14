@@ -9,9 +9,25 @@ namespace ResourceManager.MVVM.ViewModel
 {
     class MainViewModel : ObservableObject
     {
-         public MainViewModel() 
-        { 
 
+        public HomeViewModel HomeVM { get; set; }
+
+        private object _CurrentView;
+
+        public object CurrentView
+        {
+            get { return _CurrentView; }
+            set
+            { 
+                _CurrentView = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public MainViewModel() 
+        { 
+            HomeVM = new HomeViewModel();
+            CurrentView = HomeVM;
         }
     }
 }

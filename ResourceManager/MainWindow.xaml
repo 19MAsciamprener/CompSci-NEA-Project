@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ResourceManager"
+        xmlns:ViewModel="clr-namespace:ResourceManager.MVVM.ViewModel"
         mc:Ignorable="d" 
         Height="720" Width="1280"
         WindowStyle="None"
@@ -11,6 +12,9 @@
         Background="Transparent"
         AllowsTransparency="True">
 
+    <Window.DataContext>
+        <ViewModel:MainViewModel/>
+    </Window.DataContext>
 
     <Border Background="#272537"
             CornerRadius="20" Height="720">
@@ -60,7 +64,8 @@
 
             <ContentControl Grid.Row="1"
                             Grid.Column="1"
-                            Margin="10"/>
+                            Margin="10"
+                            Content="{Binding CurrentView}"/>
 
         </Grid>
         

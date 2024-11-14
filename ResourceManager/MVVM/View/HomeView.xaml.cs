@@ -24,5 +24,6 @@ namespace ResourceManager.MVVM.View
         {
             InitializeComponent();
         }
+
     }
 }
