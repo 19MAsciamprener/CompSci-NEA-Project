@@ -43,10 +43,20 @@
                                    Margin="20,10,10,0"/>
 
                     </StackPanel>
-                    <Image Width="190" Height="151"
-                           Source="/Images/man.jpg"
-                           HorizontalAlignment="Right"
-                           VerticalAlignment="Bottom" Margin="0,0,10,10"/>
+
+                    <Image
+                        Source="/Images/PNG_transparency_demonstration_1.png" 
+                        Margin="265,57,-35,-17" RenderTransformOrigin="0.5,0.5">
+                        <Image.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform/>
+                                <SkewTransform/>
+                                <RotateTransform Angle="-27.114"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </Image.RenderTransform>
+                    </Image>
+
                 </Grid>
 
             </Border>
@@ -105,7 +115,7 @@
 
             </StackPanel>
         </StackPanel>
-        
-        
+
+
     </StackPanel>
 </UserControl>

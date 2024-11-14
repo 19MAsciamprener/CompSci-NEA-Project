@@ -9,9 +9,16 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Images\" />
+    <None Remove="Images\PNG_transparency_demonstration_1.png" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="Fonts\" />
     <Folder Include="MVVM\Model\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Images\PNG_transparency_demonstration_1.png" />
   </ItemGroup>
 
 </Project>
