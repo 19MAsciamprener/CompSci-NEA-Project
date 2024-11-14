@@ -16,18 +16,13 @@ using System.Windows.Shapes;
 namespace ResourceManager.MVVM.View
 {
     /// <summary>
-    /// Interaction logic for HomeView.xaml
+    /// Interaction logic for TestPage.xaml
     /// </summary>
-    public partial class HomeView : UserControl
+    public partial class TestPage : UserControl
     {
-        public HomeView()
+        public TestPage()
         {
             InitializeComponent();
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            MainTopicText.Text = ("Hello World");
         }
     }
 }

@@ -21,6 +21,10 @@
                 <View:DiscoveryView/>
             </DataTemplate>
 
+            <DataTemplate DataType="{x:Type ViewModel:TestPageModel}">
+                <View:TestPage/>
+            </DataTemplate>
+
         </ResourceDictionary>
     </Application.Resources>
 </Application>

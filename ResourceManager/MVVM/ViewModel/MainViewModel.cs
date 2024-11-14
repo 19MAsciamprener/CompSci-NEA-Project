@@ -14,11 +14,15 @@ namespace ResourceManager.MVVM.ViewModel
 
         public RelayCommand DiscoveryViewCommand { get; set; }
 
+        public RelayCommand TestPageCommand { get; set; }
+
 
 
         public HomeViewModel HomeVM { get; set; }
 
         public DiscoveryViewModel DiscoveryVM { get; set; }
+
+        public TestPageModel TestPageModel { get; set; }
 
 
         private object _CurrentView;
@@ -37,6 +41,7 @@ namespace ResourceManager.MVVM.ViewModel
         { 
             HomeVM = new HomeViewModel();
             DiscoveryVM = new DiscoveryViewModel();
+            TestPageModel = new TestPageModel();
 
             CurrentView = HomeVM;
 
@@ -48,6 +53,11 @@ namespace ResourceManager.MVVM.ViewModel
             DiscoveryViewCommand = new RelayCommand(o =>
             {
                 CurrentView = DiscoveryVM;
+            });
+
+            TestPageCommand = new RelayCommand(o =>
+            {
+                CurrentView = TestPageModel;
             });
         }
     }
