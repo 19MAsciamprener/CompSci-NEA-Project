@@ -17,7 +17,10 @@
                 <View:HomeView/>
             </DataTemplate>
             
-            
+            <DataTemplate DataType="{x:Type ViewModel:DiscoveryViewModel}">
+                <View:DiscoveryView/>
+            </DataTemplate>
+
         </ResourceDictionary>
     </Application.Resources>
 </Application>

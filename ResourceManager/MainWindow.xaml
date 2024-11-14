@@ -39,18 +39,28 @@
                    FontSize="22"/>
 
             <StackPanel Grid.Row="1">
+                
                 <RadioButton Content="Home"
                              Height="50"
                              Foreground="White"
                              FontSize="14"
                              Style="{StaticResource MenuButtonTheme}"
-                             />
+                             IsChecked="True"
+                             Command="{Binding HomeViewCommand}"/>
+
                 <RadioButton Content="Discovery"
-             Height="50"
-             Foreground="White"
-             FontSize="14"
-             Style="{StaticResource MenuButtonTheme}"
-             />
+                             Height="50"
+                             Foreground="White"
+                             FontSize="14"
+                             Style="{StaticResource MenuButtonTheme}"
+                             Command="{Binding DiscoveryViewCommand}"/>
+
+                <RadioButton Content="Discovery"
+                             Height="50"
+                             Foreground="White"
+                             FontSize="14"
+                             Style="{StaticResource MenuButtonTheme}"/>
+
             </StackPanel>
 
 
