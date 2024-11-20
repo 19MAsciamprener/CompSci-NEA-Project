@@ -7,7 +7,16 @@
         xmlns:mah="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
 
         mc:Ignorable="d"
-        Title="Main Window" Height="450" Width="800" ShowTitleBar="True">
+                 Title="MainWindow" 
+                 Height="480"
+                 Icon="/Images/CashIcon.ico"
+                 ResizeMode="CanResizeWithGrip"
+                 Width="640"
+                 MinWidth="640"
+                 MinHeight="480"
+                 BorderBrush="{DynamicResource MahApps.Brushes.Accent}"
+                 BorderThickness="3">
+    
     <Grid>
         <StackPanel>
         <Button Height="50"
