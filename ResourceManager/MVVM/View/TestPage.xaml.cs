@@ -31,14 +31,10 @@ namespace ResourceManager.MVVM.View
         private void Button_Click(object sender, RoutedEventArgs e)
         {
 
-            Random rnd = new Random();
-
             Names names = new Names
             {
-
                 FirstName = FirstNameBox.Text,
                 LastName = LastNameBox.Text,
-                ID = (rnd.Next(0, 1000)),
             };
 
             NamesData.AddNamesToDb(names);

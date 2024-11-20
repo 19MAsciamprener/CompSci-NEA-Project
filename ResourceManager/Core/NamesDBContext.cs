@@ -11,7 +11,7 @@ namespace ResourceManager.Core
     {
         public DbSet<Names> names { get; set; }
 
-        public string path = @"C:\Users\mattia\Documents\GitHub\CompSci-NEA-Project\Names.db";
+        public string path = @"H:\CompSci-NEA-Project\Names.db";
 
         protected override void OnConfiguring(DbContextOptionsBuilder options) => options.UseSqlite($"Data Source={path}");
     }
