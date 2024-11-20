@@ -39,6 +39,8 @@ namespace ResourceManager.MVVM.View
 
             NamesData.AddNamesToDb(names);
 
+            LoadGridViewData();
+
         }
     }
 }

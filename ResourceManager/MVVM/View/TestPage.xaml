@@ -53,9 +53,11 @@
         <DataGrid Width="500"
                   Height="430"
                   HorizontalAlignment="Right"
-                  Margin="10">
-            
-            
+                  Margin="10" 
+                  AlternatingRowBackground="#FFC1C1C1" 
+                  AlternationCount="1">
+
+
         </DataGrid>
     </Grid>
 </UserControl>
