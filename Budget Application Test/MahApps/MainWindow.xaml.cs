@@ -31,5 +31,13 @@ namespace MahApps
             RemainingBalance = $"${Balance}";
 
         }
+
+        private void NewBudgetButton_Click(object sender, RoutedEventArgs e)
+        {
+            if ((BudgetStackPanel.Visibility) == Visibility.Collapsed)
+                    {
+                     BudgetStackPanel.Visibility = Visibility.Visible;
+                    }
+        }
     }
 }
