@@ -45,7 +45,8 @@
                     Margin="20"
                     Background="Beige"
                     Content="Press"
-                    FontSize="50"/>
+                    FontSize="50" 
+                    Click="Button_Click"/>
             
         </StackPanel>
     </Grid>

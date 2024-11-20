@@ -1,4 +1,6 @@
-﻿using System;
+﻿using ResourceManager.Core;
+using ResourceManager.Data;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,10 +21,28 @@ namespace ResourceManager.MVVM.View
     /// Interaction logic for TestPage.xaml
     /// </summary>
     public partial class TestPage : UserControl
+
     {
         public TestPage()
         {
             InitializeComponent();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
+            Random rnd = new Random();
+
+            Names names = new Names
+            {
+
+                FirstName = FirstNameBox.Text,
+                LastName = LastNameBox.Text,
+                ID = (rnd.Next(0, 1000)),
+            };
+
+            NamesData.AddNamesToDb(names);
+
         }
     }
 }

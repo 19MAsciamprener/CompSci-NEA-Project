@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ResourceManager.Core
 {
-    class Names
+    public class Names
     {
         public int ID { get; set; }
         public string FirstName { get; set; }
