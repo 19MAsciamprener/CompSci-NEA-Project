@@ -49,5 +49,13 @@
                     Click="Button_Click"/>
             
         </StackPanel>
+
+        <DataGrid Width="500"
+                  Height="430"
+                  HorizontalAlignment="Right"
+                  Margin="10">
+            
+            
+        </DataGrid>
     </Grid>
 </UserControl>
