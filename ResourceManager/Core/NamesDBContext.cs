@@ -9,9 +9,9 @@ namespace ResourceManager.Core
 {
     internal class NamesDBContext : DbContext
     {
-        public DbSet<Names> names { get: set: }
+        public DbSet<Names> names { get; set; }
 
-        public string path = @"C:\Temp\Names.db";
+        public string path = @"C:\Users\mattia\Documents\GitHub\CompSci-NEA-Project\Names.db";
 
         protected override void OnConfiguring(DbContextOptionsBuilder options) => options.UseSqlite($"Data Source={path}");
     }
