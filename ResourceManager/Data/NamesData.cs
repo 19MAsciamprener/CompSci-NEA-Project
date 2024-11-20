@@ -11,7 +11,11 @@ namespace ResourceManager.Data
     {
         public static void AddNamesToDb(Names names)
         {
-            
+            using (var db = new NamesDBContext())
+            {
+                db.Add(names);
+                db.SaveChanges();
+            }
         }
     }
 }

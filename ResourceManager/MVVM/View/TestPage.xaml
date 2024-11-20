@@ -6,8 +6,47 @@
              xmlns:local="clr-namespace:ResourceManager.MVVM.View"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800"
-             Background="Red">
+             Background="LightGray">
     <Grid>
+        <StackPanel Width="250"
+                    Height="400"
+                    HorizontalAlignment="Left"
+                    Margin="20">
 
+            <TextBlock Width="150"
+                       Height="40"
+                       Text="First Name:"
+                       FontSize="30"
+                       HorizontalAlignment="Left"
+                       Margin="10"/>
+
+
+            <TextBox Width="200"
+                     Height="50"
+                     Name="FirstNameBox"/>
+
+
+            <TextBlock Width="150"
+                       Height="40"
+                       Text="Last Name:"
+                       FontSize="30"
+                       HorizontalAlignment="Left"
+                       Margin="10"/>
+
+
+            <TextBox Width="200"
+                     Height="50"
+                     Name="LastNameBox"/>
+
+            
+            
+            <Button Width="150"
+                    Height="100"
+                    Margin="20"
+                    Background="Beige"
+                    Content="Press"
+                    FontSize="50"/>
+            
+        </StackPanel>
     </Grid>
 </UserControl>
