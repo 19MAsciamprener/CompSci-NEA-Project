@@ -18,18 +18,22 @@
                  BorderThickness="3">
     
     <Grid>
-        <StackPanel>
-        <Button Height="50"
-                Width="100"
-                Content="Press Me"/>
-            <ComboBox Height="50"
-                  Width="125">
+        <Grid.RowDefinitions>
 
-                <ComboBoxItem Content="1"/>
-                <ComboBoxItem Content="2"/>
-                <ComboBoxItem Content="3"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="26"/>
+            
+        </Grid.RowDefinitions>
 
-            </ComboBox>
-        </StackPanel>
+        <StatusBar Grid.Row="1">
+            
+            <StatusBarItem FontSize="16"
+                           Content="Remaining Monthly Budget"/>
+            
+            <TextBlock Text="{Binding RemainingBalance}"
+                       FontSize="16"/>
+
+        </StatusBar>
+        
     </Grid>
 </mah:MetroWindow>

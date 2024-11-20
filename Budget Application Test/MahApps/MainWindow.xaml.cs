@@ -21,9 +21,15 @@ namespace MahApps
     /// </summary>
     public partial class MainWindow : MetroWindow
     {
+        public string RemainingBalance { get; set; }
         public MainWindow()
         {
             InitializeComponent();
+            DataContext = this;
+
+            double Balance = 1600;
+            RemainingBalance = $"${Balance}";
+
         }
     }
 }
