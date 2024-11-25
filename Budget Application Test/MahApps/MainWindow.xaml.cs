@@ -1,4 +1,5 @@
 ﻿using MahApps.Metro.Controls;
+using MahApps.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,6 +23,8 @@ namespace MahApps
     public partial class MainWindow : MetroWindow
     {
         public string RemainingBalance { get; set; }
+
+        public List<BudgetClass> budgets;
         public MainWindow()
         {
             InitializeComponent();
@@ -29,6 +32,8 @@ namespace MahApps
 
             double Balance = 1600;
             RemainingBalance = $"${Balance}";
+
+            budgets = new List<BudgetClass>();
 
         }
 
@@ -38,6 +43,18 @@ namespace MahApps
                     {
                      BudgetStackPanel.Visibility = Visibility.Visible;
                     }
+        }
+
+        private void CreateBudgetButton_Click(object sender, RoutedEventArgs e)
+        {
+            BudgetClass budget = new BudgetClass
+            {
+                StartDate = (DateTime)StartDatePicker.SelectedDate,
+                EndDate = (DateTime)EndDatePicker.SelectedDate,
+                BudgetAmount = double.Parse(TotalBudgetTextBox.Text)
+            };
+
+            budgets.Add(budget);
         }
     }
 }
