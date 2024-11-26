@@ -44,6 +44,7 @@
                 <mah:FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE710;"
                               Foreground="White"/>
             </Button>
+
         </Grid>
 
 
@@ -88,16 +89,35 @@
             
         </Grid>
 
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+
+
+
+
+
+
+
+
+
+        <mah:FlyoutsControl>
+            <mah:Flyout
+                x:Name="UpdateFlyout"
+                Width="1000"
+                Header=""
+                AutoCloseInterval="1750"
+                IsAutoCloseEnabled="True"
+                Position="Top">
+
+                <TextBlock
+                    Text="Budget Created!"
+                    Width="500"
+                    TextAlignment="Center"
+                    Padding="10"
+                    FontSize="24"/>
+                
+            </mah:Flyout>
+            
+            
+        </mah:FlyoutsControl>
         
         
         

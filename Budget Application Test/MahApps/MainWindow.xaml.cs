@@ -55,6 +55,13 @@ namespace MahApps
             };
 
             budgets.Add(budget);
+
+            UpdateFlyout.CloseButtonVisibility=Visibility.Hidden;
+
+            BudgetStackPanel.Visibility=Visibility.Collapsed;
+
+            UpdateFlyout.IsOpen=true;
         }
+
     }
 }
