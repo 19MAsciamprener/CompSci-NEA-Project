@@ -191,6 +191,11 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Migrations\20241127105848_Initial.cs" />
+    <Compile Include="Migrations\20241127105848_Initial.Designer.cs">
+      <DependentUpon>20241127105848_Initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\BudgetDbContextModelSnapshot.cs" />
     <Compile Include="Models\BudgetClass.cs" />
     <Compile Include="Models\BudgetDbContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
