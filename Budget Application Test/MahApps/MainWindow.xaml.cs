@@ -2,6 +2,7 @@
 using MahApps.Models;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,7 +25,7 @@ namespace MahApps
     {
         public string RemainingBalance { get; set; }
 
-        public List<BudgetClass> budgets;
+        public ObservableCollection<BudgetClass> budgetList;
         public MainWindow()
         {
             InitializeComponent();
@@ -33,7 +34,7 @@ namespace MahApps
             double Balance = 1600;
             RemainingBalance = $"${Balance}";
 
-            budgets = new List<BudgetClass>();
+            budgetList = new ObservableCollection<BudgetClass>();
 
         }
 
@@ -54,7 +55,9 @@ namespace MahApps
                 BudgetAmount = double.Parse(TotalBudgetTextBox.Text)
             };
 
-            budgets.Add(budget);
+            budgetList.Add(budget);
+
+            BudgetListView.ItemsSource = budgetList;
 
             UpdateFlyout.CloseButtonVisibility=Visibility.Hidden;
 

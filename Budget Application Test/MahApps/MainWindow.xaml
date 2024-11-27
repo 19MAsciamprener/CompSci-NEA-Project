@@ -8,12 +8,12 @@
         mc:Ignorable="d"
                  
                  Title="MainWindow" 
-                 Height="480"
+                 Height="720"
                  Icon="/Images/CashIcon.ico"
                  ResizeMode="CanResizeWithGrip"
-                 Width="640"
-                 MinWidth="640"
-                 MinHeight="480"
+                 Width="1280"
+                 MinWidth="1280"
+                 MinHeight="720"
                  BorderBrush="{DynamicResource MahApps.Brushes.Accent}"
                  BorderThickness="3">
     
@@ -52,10 +52,27 @@
         <Grid Grid.Row="1">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="180"/>
                 <ColumnDefinition Width="20"/>
             </Grid.ColumnDefinitions>
 
+            <ListView Grid.Column="0"
+                      BorderThickness="1"
+                      x:Name="BudgetListView">
+            <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="Start Date"
+                                        DisplayMemberBinding="{Binding StartDate}"/>
+                        <GridViewColumn Header="End Date"
+                                        DisplayMemberBinding="{Binding EndDate}"/>
+                        <GridViewColumn Header="Budget Amount"
+                                        DisplayMemberBinding="{Binding BudgetAmount}"/>
+                    </GridView>
+                </ListView.View>
+
+            </ListView>
+            
             <StackPanel x:Name="BudgetStackPanel"
                     Orientation="Vertical"
                     Visibility="Collapsed"
