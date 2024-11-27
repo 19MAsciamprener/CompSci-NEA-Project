@@ -1,4 +1,5 @@
-﻿using MahApps.Metro.Controls;
+﻿using MahApps.Business_Logic;
+using MahApps.Metro.Controls;
 using MahApps.Models;
 using System;
 using System.Collections.Generic;
@@ -48,6 +49,14 @@ namespace MahApps
 
         private void CreateBudgetButton_Click(object sender, RoutedEventArgs e)
         {
+            string ErrorMessage = BudgetValidation.ValidateBudget(TotalBudgetTextBox.Text, StartDatePicker.SelectedDate, EndDatePicker.SelectedDate);
+
+                if (ErrorMessage != "")
+            {
+                ShowError(ErrorMessage);
+                return;
+            }
+
             BudgetClass budget = new BudgetClass
             {
                 StartDate = (DateTime)StartDatePicker.SelectedDate,
@@ -59,12 +68,29 @@ namespace MahApps
 
             BudgetListView.ItemsSource = budgetList;
 
-            UpdateFlyout.CloseButtonVisibility=Visibility.Hidden;
-
-            BudgetStackPanel.Visibility=Visibility.Collapsed;
-
-            UpdateFlyout.IsOpen=true;
+            ShowSuccess();
         }
 
+        private void ShowError(string Error)
+        {
+            UpdateFlyout.Background = Brushes.Red;
+            FlyOutTextBlock.Text = Error;
+            UpdateFlyout.AutoCloseInterval = 3000;
+            UpdateFlyout.CloseButtonVisibility = Visibility.Hidden;
+
+            UpdateFlyout.IsOpen = true;
+        }
+
+        private void ShowSuccess()
+        {
+            UpdateFlyout.Background = Brushes.Green;
+            FlyOutTextBlock.Text = "Added Budget Successfully";
+
+            UpdateFlyout.CloseButtonVisibility = Visibility.Hidden;
+
+            BudgetStackPanel.Visibility = Visibility.Collapsed;
+
+            UpdateFlyout.IsOpen = true;
+        }
     }
 }
