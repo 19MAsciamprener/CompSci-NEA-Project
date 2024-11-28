@@ -65,8 +65,15 @@ namespace MahApps
                 BudgetAmount = double.Parse(TotalBudgetTextBox.Text)
             };
 
+
+
+            string StartDateStr = budget.StartDate.ToString();
+            string EndDateStr = budget.EndDate.ToString();
+            StartDateStr = "\"" + StartDateStr + "\"";
+            EndDateStr = "\"" + EndDateStr + "\"";
+
             budgetList.Add(budget);
-            MahApps.Core.DbCommands.DataInDb(budget);
+            MahApps.Core.DbCommands.DataInDb(StartDateStr, EndDateStr, budget.BudgetAmount);
 
             BudgetListView.ItemsSource = budgetList;
 

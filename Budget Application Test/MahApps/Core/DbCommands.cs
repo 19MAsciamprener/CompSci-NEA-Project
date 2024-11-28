@@ -21,7 +21,7 @@ namespace MahApps.Core
             {
                 connection.Open();
                 string TableCommand = "CREATE TABLE IF NOT EXISTS budgetsTable(" +
-                    "ID INTEGER PRIMARY_KEY, " +
+                    "ID INTEGER PRIMARY KEY AUTOINCREMENT, " +
                     "StartDate VARCHAR(20) NOT NULL, " +
                     "EndDate VARCHAR(20) NOT NULL, " +
                     "BudgetAmount DOUBLE NOT NULL);";
@@ -34,7 +34,7 @@ namespace MahApps.Core
         }
 
 
-        public static void DataInDb (BudgetClass budget)
+        public static void DataInDb (string StartDate, string EndDate, double BudgetAmount)
         {
             string DbPath = Path.Combine("C:\\Users\\mattia\\Documents\\GitHub\\CompSci-NEA-Project\\Budget Application Test", FileName);
 
@@ -42,7 +42,7 @@ namespace MahApps.Core
             {
                 connection.Open();
                 string TableCommand = $"INSERT INTO budgetsTable (StartDate, EndDate, BudgetAmount) VALUES(" +
-                    $"{budget.StartDate.ToString()}, {budget.EndDate.ToString()}, {budget.BudgetAmount});";
+                    $"{StartDate}, {EndDate}, {BudgetAmount});";
 
                 SqliteCommand AddToTable = new SqliteCommand(TableCommand, connection);
 
