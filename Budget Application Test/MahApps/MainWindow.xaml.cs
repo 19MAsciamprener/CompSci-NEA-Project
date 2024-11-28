@@ -66,6 +66,7 @@ namespace MahApps
             };
 
             budgetList.Add(budget);
+            MahApps.Core.DbCommands.DataInDb(budget);
 
             BudgetListView.ItemsSource = budgetList;
 
