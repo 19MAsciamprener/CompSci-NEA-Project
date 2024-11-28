@@ -37,6 +37,7 @@ namespace MahApps
 
             budgetList = new ObservableCollection<BudgetClass>();
 
+            MahApps.Core.DbCommands.InitializeDb();
         }
 
         private void NewBudgetButton_Click(object sender, RoutedEventArgs e)
