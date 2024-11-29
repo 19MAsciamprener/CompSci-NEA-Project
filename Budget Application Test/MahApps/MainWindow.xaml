@@ -75,20 +75,6 @@
 
             </ListView>
 
-            <Button x:Name="RefreshListButton"           
-                    Click="RefreshListButton_Click"
-                    Content="Refresh List"
-                    FontSize="20"
-                    Grid.Column="1"
-                    Width="200"
-                    Height="100"
-                    HorizontalAlignment="left"
-                    VerticalAlignment="Top"
-                    Padding="10"
-                    
-                    mah:ControlsHelper.ContentCharacterCasing="Normal"
-                    Style="{StaticResource MahApps.Styles.Button.Square.Accent}"/>
-
             <StackPanel x:Name="BudgetStackPanel"
                     Orientation="Vertical"
                     Visibility="Collapsed"

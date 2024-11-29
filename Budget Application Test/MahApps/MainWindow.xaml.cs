@@ -126,17 +126,5 @@ namespace MahApps
             UpdateFlyout.IsOpen = true;
         }
 
-        private void RefreshListButton_Click(object sender, RoutedEventArgs e)
-        {
-            int Count = MahApps.Core.DbCommands.IdCount();
-            budgetList.Clear();
-
-            for (int x = 1; x <= Count; x++)
-            {
-                budgetList.Add(MahApps.Core.DbCommands.RetreiveData(x));
-                BudgetListView.ItemsSource = budgetList;
-            }
-            ListRefreshShowSuccess();
-        }
     }
 }
