@@ -62,6 +62,8 @@
                       x:Name="BudgetListView">
             <ListView.View>
                     <GridView>
+                        <GridViewColumn Header="ID"
+                                        DisplayMemberBinding="{Binding Id}"/>
                         <GridViewColumn Header="Start Date"
                                         DisplayMemberBinding="{Binding StartDate}"/>
                         <GridViewColumn Header="End Date"
@@ -72,7 +74,21 @@
                 </ListView.View>
 
             </ListView>
-            
+
+            <Button x:Name="RefreshListButton"           
+                    Click="RefreshListButton_Click"
+                    Content="Refresh List"
+                    FontSize="20"
+                    Grid.Column="1"
+                    Width="200"
+                    Height="100"
+                    HorizontalAlignment="left"
+                    VerticalAlignment="Top"
+                    Padding="10"
+                    
+                    mah:ControlsHelper.ContentCharacterCasing="Normal"
+                    Style="{StaticResource MahApps.Styles.Button.Square.Accent}"/>
+
             <StackPanel x:Name="BudgetStackPanel"
                     Orientation="Vertical"
                     Visibility="Collapsed"

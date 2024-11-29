@@ -72,10 +72,16 @@ namespace MahApps
             StartDateStr = "\"" + StartDateStr + "\"";
             EndDateStr = "\"" + EndDateStr + "\"";
 
-            budgetList.Add(budget);
             MahApps.Core.DbCommands.DataInDb(StartDateStr, EndDateStr, budget.BudgetAmount);
 
-            BudgetListView.ItemsSource = budgetList;
+
+            int Count = MahApps.Core.DbCommands.IdCount();
+
+            for (int x = 1; x <= Count; x++)
+            {
+                budgetList.Add(MahApps.Core.DbCommands.RetreiveData(x));
+                BudgetListView.ItemsSource = budgetList;
+            }
 
             ShowSuccess();
         }
@@ -100,6 +106,17 @@ namespace MahApps
             BudgetStackPanel.Visibility = Visibility.Collapsed;
 
             UpdateFlyout.IsOpen = true;
+        }
+
+        private void RefreshListButton_Click(object sender, RoutedEventArgs e)
+        {
+            int Count = MahApps.Core.DbCommands.IdCount();
+
+            for (int x = 1; x <= Count; x++)
+            {
+                budgetList.Add(MahApps.Core.DbCommands.RetreiveData(x));
+                BudgetListView.ItemsSource = budgetList;
+            }
         }
     }
 }
