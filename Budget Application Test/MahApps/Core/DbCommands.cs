@@ -17,7 +17,7 @@ namespace MahApps.Core
 
         public static void InitializeDb()
         {
-            string DbPath = Path.Combine("C:\\Users\\mattia\\Documents\\GitHub\\CompSci-NEA-Project\\Budget Application Test", FileName);
+            string DbPath = Path.Combine("..\\Debug", FileName);
 
             using (var connection = new SqliteConnection($"Filename={DbPath}"))
             {
@@ -38,7 +38,7 @@ namespace MahApps.Core
 
         public static void DataInDb (string StartDate, string EndDate, double BudgetAmount)
         {
-            string DbPath = Path.Combine("C:\\Users\\mattia\\Documents\\GitHub\\CompSci-NEA-Project\\Budget Application Test", FileName);
+            string DbPath = Path.Combine("..\\Debug", FileName);
 
             using (var connection = new SqliteConnection($"Filename={DbPath}"))
             {
@@ -55,7 +55,7 @@ namespace MahApps.Core
 
         public static BudgetClass RetreiveData(int IdVar)
         {
-            string DbPath = Path.Combine("C:\\Users\\mattia\\Documents\\GitHub\\CompSci-NEA-Project\\Budget Application Test", FileName);
+            string DbPath = Path.Combine("..\\Debug", FileName);
 
             using (var connection = new SqliteConnection($"Filename={DbPath}"))
             {
@@ -113,7 +113,7 @@ namespace MahApps.Core
         public static int IdCount()
         {
             int Id = 0;
-            string DbPath = Path.Combine("C:\\Users\\mattia\\Documents\\GitHub\\CompSci-NEA-Project\\Budget Application Test", FileName);
+            string DbPath = Path.Combine("..\\Debug", FileName);
 
             using (var connection = new SqliteConnection($"Filename={DbPath}"))
             {
