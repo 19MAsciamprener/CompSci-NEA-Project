@@ -38,6 +38,14 @@ namespace MahApps
             budgetList = new ObservableCollection<BudgetClass>();
 
             MahApps.Core.DbCommands.InitializeDb();
+
+            int Count = MahApps.Core.DbCommands.IdCount();
+
+            for (int x = 1; x <= Count; x++)
+            {
+                budgetList.Add(MahApps.Core.DbCommands.RetreiveData(x));
+                BudgetListView.ItemsSource = budgetList;
+            }
         }
 
         private void NewBudgetButton_Click(object sender, RoutedEventArgs e)
@@ -54,7 +62,7 @@ namespace MahApps
 
                 if (ErrorMessage != "")
             {
-                ShowError(ErrorMessage);
+                BudgetAddShowError(ErrorMessage);
                 return;
             }
 
@@ -76,17 +84,17 @@ namespace MahApps
 
 
             int Count = MahApps.Core.DbCommands.IdCount();
-
+            budgetList.Clear();
             for (int x = 1; x <= Count; x++)
             {
                 budgetList.Add(MahApps.Core.DbCommands.RetreiveData(x));
                 BudgetListView.ItemsSource = budgetList;
             }
 
-            ShowSuccess();
+            BudgetAddShowSuccess();
         }
 
-        private void ShowError(string Error)
+        private void BudgetAddShowError(string Error)
         {
             UpdateFlyout.Background = Brushes.Red;
             FlyOutTextBlock.Text = Error;
@@ -96,7 +104,7 @@ namespace MahApps
             UpdateFlyout.IsOpen = true;
         }
 
-        private void ShowSuccess()
+        private void BudgetAddShowSuccess()
         {
             UpdateFlyout.Background = Brushes.Green;
             FlyOutTextBlock.Text = "Added Budget Successfully";
@@ -108,15 +116,27 @@ namespace MahApps
             UpdateFlyout.IsOpen = true;
         }
 
+        private void ListRefreshShowSuccess()
+        {
+            UpdateFlyout.Background = Brushes.Green;
+            FlyOutTextBlock.Text = "Refreshed List Successfully";
+
+            UpdateFlyout.CloseButtonVisibility = Visibility.Hidden;
+
+            UpdateFlyout.IsOpen = true;
+        }
+
         private void RefreshListButton_Click(object sender, RoutedEventArgs e)
         {
             int Count = MahApps.Core.DbCommands.IdCount();
+            budgetList.Clear();
 
             for (int x = 1; x <= Count; x++)
             {
                 budgetList.Add(MahApps.Core.DbCommands.RetreiveData(x));
                 BudgetListView.ItemsSource = budgetList;
             }
+            ListRefreshShowSuccess();
         }
     }
 }
