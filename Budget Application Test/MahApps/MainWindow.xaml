@@ -59,7 +59,8 @@
 
             <ListView Grid.Column="0"
                       BorderThickness="1"
-                      x:Name="BudgetListView">
+                      x:Name="BudgetListView"
+                      SelectionChanged="BudgetListView_SelectionChanged">
             <ListView.View>
                     <GridView>
                         <GridViewColumn Header="ID"

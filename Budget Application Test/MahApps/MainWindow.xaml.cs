@@ -126,5 +126,9 @@ namespace MahApps
             UpdateFlyout.IsOpen = true;
         }
 
+        private void BudgetListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            BudgetClass SelectedItem = (BudgetClass)BudgetListView.SelectedItem;
+        }
     }
 }
